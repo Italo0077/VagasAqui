@@ -1,0 +1,83 @@
+package Entidades;
+
+public class Cadastro {
+	//Atributos
+	private String email,senha,login,nome;
+	private int nCelular,data;
+	public String entrar,saida;
+	
+	//Processamento
+	
+	public void Login(String Login) {
+		this.email = Login;
+		
+	}
+	public void Senha(String Senha) {
+		this.senha = Senha;
+	}
+	public void logado() {
+		if(this.email== this.entrar && this.senha == this.senha) {
+			System.out.println("Logado com suceso");
+		}else
+		System.out.println("Tente de novo");
+	}
+	
+	
+	
+	//Get e  Set
+	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getnCelular() {
+		return nCelular;
+	}
+
+	public void setnCelular(int nCelular) {
+		this.nCelular = nCelular;
+	}
+
+	public int getData() {
+		return data;
+	}
+
+	public void setData(int data) {
+		this.data = data;
+	}
+
+	//to string
+	public String toString() {
+		return "Seu nome é"+this.nome+"\nSeu Email: "+this.email;
+	}
+
+}
