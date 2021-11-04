@@ -1,0 +1,50 @@
+package Aplicacoes;
+
+/* Equipe Brothers
+ * 
+ * integrantes
+ * 
+ * 
+ * Ítalo Ferreira
+ * Guilherme Almeida
+ * Guilherme Moreira
+ * Lucas São paio
+  */
+ 
+import javax.swing.JOptionPane;
+import Entidades.Cadastro;
+public class Controle {
+
+	public static void main(String[] args) {
+		Entidades.Cadastro ec = new Entidades.Cadastro();
+		
+		Object[] login = {"Cadastrar","logar"};
+		int l = JOptionPane.showOptionDialog(null, "Vagas Aqui!\nMelhor lugar para estacionar",
+				"Vagas Aqui!",JOptionPane.YES_OPTION,JOptionPane.INFORMATION_MESSAGE,null, login,login[1]);
+		
+		if(l == JOptionPane.YES_OPTION) {
+			ec.setNome(JOptionPane.showInputDialog(null,"Qual o seu nome Completo?","Informe seu nome",JOptionPane.QUESTION_MESSAGE));
+			ec.setData(Integer.parseInt(JOptionPane.showInputDialog(null,"Informe sua data de nascimento",JOptionPane.INFORMATION_MESSAGE)));
+			ec.setnCelular(Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o numero do celular","Celular")));
+			ec.setEmail(JOptionPane.showInputDialog(null,"Digite seu melhor email"));
+			System.out.println(""+ ec.getEmail());
+			ec.setSenha(JOptionPane.showInputDialog(null,"Qual vai ser sua senha?"));
+			
+				
+		}
+		
+		String b =JOptionPane.showInputDialog(null,"Digite o Login(email)");
+		System.out.println(""+ ec.getEmail());
+		String a = JOptionPane.showInputDialog(null,"Digite sua Senha: ");
+		System.out.println(""+ ec.getEmail()+" "+ec.getSenha());
+		
+		if(ec.getEmail().equals(b) && ec.getSenha().equals(a)) {
+			System.out.println("Logado com suceso");
+		}else
+		System.out.println("Tente de novo");
+	
+		//ec.logado();;
+
+	}
+
+}
