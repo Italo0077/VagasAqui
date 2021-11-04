@@ -1,0 +1,23 @@
+public class Procurar {
+	
+	public String escolha;
+	
+	// fazer o programa dar escolha se vai ou não procurar vagas
+	
+	public void procurar() {
+		
+		System.out.println("Deseja procura vagas? s/n "); // imprima um menssagem
+		
+		switch(this.escolha) { // cria uma escolha "s" de sim e "n" de não
+		
+		case"s":
+			System.out.println("Procurando vagas!...");
+			break;
+		case"n":
+			System.out.println("Obrigado, voltando ao menu principal!");
+			break;
+			default:
+				System.out.println("erro, tente novamente");
+		}
+	}
+}
