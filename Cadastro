@@ -1,12 +1,38 @@
 package Entidades;
+import java.util.Scanner;
 
 public class Cadastro {
 	//Atributos
 	private String email,senha,login,nome;
 	private int nCelular,data;
-	public String entrar,saida;
+	public String entrar,saida,escolha;
 	
 	//Processamento
+	Scanner ler = new Scanner(System.in);
+	Procurar p = new Procurar();
+
+	public void cadastro() {
+		
+		System.out.println("Olá, deseja LOGAR ou CADASTRAR? l/c");
+		this.escolha = ler.next();
+		
+		switch(this.escolha) {
+		case "c":
+					
+			System.out.println("Qual o seu nome Completo?");
+			setNome(ler.next());
+			System.out.println("Informe sua data de nascimento");
+			setData(ler.nextInt());
+			System.out.println("Digite o numero de celular");
+			setnCelular(ler.nextInt());
+			System.out.println("Digite o seu melhor Email");
+			setEmail(ler.next());
+			System.out.println("Qual vai ser a sua Senha para Vagas Aqui!");			
+			setSenha(ler.next());
+					break;
+		}	
+			
+	}
 	
 	public void Login(String Login) {
 		this.email = Login;
@@ -16,10 +42,14 @@ public class Cadastro {
 		this.senha = Senha;
 	}
 	public void logado() {
-		if(this.email== this.entrar && this.senha == this.senha) {
+		
+		if(getEmail().equals(this.email) && getSenha().equals(this.senha)) { // 
 			System.out.println("Logado com suceso");
+			p.procurar();
 		}else
 		System.out.println("Tente de novo");
+		
+		
 	}
 	
 	
