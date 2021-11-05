@@ -20,51 +20,20 @@ public class Controle {
 		
 		Scanner ler = new Scanner(System.in);
 		Entidades.Cadastro ec = new Entidades.Cadastro();
-			
-				
+							
 		System.out.println("===========================================");
 		System.out.println("              Vagas Aqui!                  ");
 		System.out.println("===========================================");
+				 
+		 ec.cadastro(); // as opções de cadastro foram movido para classe cadastro
 		
-		System.out.println("Olá, deseja LOGAR ou CADASTRAR? l/c");
-		String l = ler.next(); 
-		
-		switch(l) {
-		case "c":
-		
-		
-			
-			System.out.println("Qual o seu nome Completo?");
-			ec.setNome(ler.next());
-			System.out.println("Informe sua data de nascimento");
-			ec.setData(ler.nextInt());
-			System.out.println("Digite o numero de celular");
-			ec.setnCelular(ler.nextInt());
-			System.out.println("Digite o seu melhor Email");
-			ec.setEmail(ler.next());
-			System.out.println("Qual vai ser a sua Senha para Vagas Aqui!");			
-			ec.setSenha(ler.next());
-					break;
-		}	
-				
 		System.out.println("Digite o Login(email)");
 		String b = ler.next();
-		System.out.println(""+ ec.getEmail());
 		System.out.println("Digite sua Senha: ");
 		String a = ler.next();
-		System.out.println(""+ ec.getEmail()+" "+ec.getSenha());
 		
-		if(ec.getEmail().equals(b) && ec.getSenha().equals(a)) { // vai comparar se o email e a senha são validadas, o condigo dentro dessa if só executa caso os dois sejam verdadeiros
-			System.out.println("Logado com suceso");
-		}else
-		System.out.println("Tente de novo");
-		
-		
-		
-	Entidades.Procurar procu = new Entidades.Procurar(); // estanciamento da classe cachorro
-	procu.procurar();
+		ec.logado(); // opção de logado tb esta na classe cadastro		
 		
 	}
-
 
 }
