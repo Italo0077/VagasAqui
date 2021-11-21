@@ -1,0 +1,14 @@
+package VagasAqui.Entidades;
+
+public class Assinatura {
+    //variavel
+    private String assinatura;
+    //metodos
+
+    void Assinatura(String assinatura){
+        this.assinatura=assinatura;
+    }
+    void CancelarAssinatura(){
+        this.assinatura="Assinatura cancelada";
+    }
+}
