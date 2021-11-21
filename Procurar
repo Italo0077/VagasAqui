@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Procurar {
 	
 	public String escolha;
@@ -5,8 +6,12 @@ public class Procurar {
 	// fazer o programa dar escolha se vai ou não procurar vagas
 	
 	public void procurar() {
+		Scanner ler = new Scanner(System.in);
+		Perfil p = new Perfil();
 		
-		System.out.println("Deseja procura vagas? s/n "); // imprima um menssagem
+		System.out.println("Deseja procura vagas? s/n\n"
+				+ "ver perfil 'p' "); // imprima um menssagem
+		escolha = ler.next();
 		
 		switch(this.escolha) { // cria uma escolha "s" de sim e "n" de não
 		
@@ -16,6 +21,8 @@ public class Procurar {
 		case"n":
 			System.out.println("Obrigado, voltando ao menu principal!");
 			break;
+		case"p":
+			p.Opcao();
 			default:
 				System.out.println("erro, tente novamente");
 		}
