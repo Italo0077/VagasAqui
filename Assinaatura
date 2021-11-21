@@ -1,14 +1,87 @@
 package VagasAqui.Entidades;
 
-public class Assinatura {
+import java.sql.Date;
+import java.util.Scanner;
+
+public class Assinatura extends Cadastro {
+    Scanner ler= new Scanner(System.in);
     //variavel
-    private String assinatura;
+    private boolean status;
+    private double valor= 40.00;
+    private String nom,emai,c,datapagamento;
+    private int nCelu;
+    
+
     //metodos
 
-    void Assinatura(String assinatura){
-        this.assinatura=assinatura;
+    public void Fazerassinatura(){
+    System.out.println("Digite  sim para fazer a assinatura"); 
+    switch(c){
+    case"sim":
+
+    do{
+    System.out.println("digite o seu nome");
+    setNom(ler.next());
+    if (nom==getNome()){}
+
+    while(nom!=getNome())
+
+    do{
+        System.out.println("digite o seu email");
+    setEmai(ler.next());
+        if (nom==getNome()){}
     }
-    void CancelarAssinatura(){
-        this.assinatura="Assinatura cancelada";
+    
+        while(nom!=getNome())
+
+
+    System.out.println("digite o seu numero ");
+    setnCelu(ler.nextInt());
+    System.out.println("digite a data de inicio do seu plano");
+
+    if(nom==getNome() & emai==getEmail() & nCelu=getnCelular()){
+    this.status= true;
+    }
+    else
+    status = false;
+    }
+        break;
+    }
+
+    
+    public String getDatapagamento() {
+        return datapagamento;
+    }
+    public void setDatapagamento(String datapagamento) {
+        this.datapagamento = datapagamento;
+    }
+    public String getNom() {
+        return nom;
+    }
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+    public String getEmai() {
+        return emai;
+    }
+    public void setEmai(String emai) {
+        this.emai = emai;
+    }
+    public int getnCelu() {
+        return nCelu;
+    }
+    public void setnCelu(int nCelu) {
+        this.nCelu = nCelu;
+    }
+    public double getValor() {
+        return valor;
+    }
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+
+    public void Cancelarassinatura(){
+        this.status=false;
     }
 }
