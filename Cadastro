@@ -49,7 +49,7 @@ public class Cadastro {
 		
 		
 	}
-	
+	//Metodo que editará cadastro
 	public void EditarCadastro() {
 		System.out.println("Deseja criar um novo nome de usuário? s/n");
 		String s = ler.next(); //atributo
