@@ -1,6 +1,4 @@
 package Entidades;
-import java.util.Scanner;
-
 public class Cadastro {
 	//Atributos
 	private String email,senha,login,nome;
@@ -52,7 +50,51 @@ public class Cadastro {
 		
 	}
 	
-	
+	public void EditarCadastro() {
+		System.out.println("Deseja criar um novo nome de usuário? s/n");
+		String s = ler.next(); //atributo
+		switch(s) {
+		case "s":
+			System.out.println("novo nome");
+			this.setNome(ler.next());
+			break;
+			default:
+				System.out.println("Você cancelou a ação");
+		}
+		System.out.println("deseja mudar data de nascimento s/n");
+		 s = ler.next();
+		switch(s) {
+		case "s":
+			System.out.println("nova data");
+			this.setData(ler.nextInt());
+			break;
+			default:
+				System.out.println("Ação cancelada");
+		}
+		
+		System.out.println("novo número de celular s/n");
+		s = ler.next();
+		switch(s) {
+		case"s":
+			System.out.println("Novo numero de celular");
+			this.setnCelular(ler.nextInt());
+			break;
+			default:
+				System.out.println("Ação cancelada");
+			}
+		
+		System.out.println("Deseja mudar o emails/n");
+		s = ler.next();
+		switch(s) {
+		case "s":
+			System.out.println("Novo email");
+			this.setEmail(ler.next());
+			break;
+			default:
+				System.out.println("Ação cancelada");
+		}
+		
+	}
 	
 	//Get e  Set
 	
