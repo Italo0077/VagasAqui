@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Perfil{
+	//isntanciar
+	Scanner ler = new Scanner(System.in);
+	Cadastro c = new Cadastro();
+	
+	//atributos
+	
+	
+	//processamento
+	public void Opcao() {
+		int escolhaPerfil = 0;
+		System.out.println("O que deseja fazer?\n"
+				+ "1.Editar perfil\n"
+				+ "2.Editar assinatura\n"
+				+ "3.voltar\n");
+		 escolhaPerfil = ler.nextInt();
+		switch(escolhaPerfil){
+			case 1:
+				c.EditarCadastro();// editação de cadastro na classe cadastro
+				break;
+			case 2:
+				
+				break;
+			case 3:
+				System.out.println("Voltando");
+				break;
+				default:
+					System.out.println("Você digitou caracteres incorretos");
+		}
+		
+		
+	}
+
+}
