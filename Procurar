@@ -22,7 +22,7 @@ public class Procurar {
 		
 		case"s":
 			System.out.println("Procurando vagas!...");
-			//vagas de exemplo
+			//vagas de exemplo sãgerados automaticamete 
 			double na = Math.random()*151.9;
 			double nv = Math.floor(Math.random()*15);
 			System.out.printf("Há %.0f" +" vagas a ",nv);		
