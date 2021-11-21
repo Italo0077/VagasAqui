@@ -1,4 +1,8 @@
+package Entidades;
+
 import java.util.Scanner;
+import java.text.DecimalFormat;
+
 public class Procurar {
 	
 	public String escolha;
@@ -6,6 +10,7 @@ public class Procurar {
 	// fazer o programa dar escolha se vai ou não procurar vagas
 	
 	public void procurar() {
+		DecimalFormat aaa = new DecimalFormat("00.00");
 		Scanner ler = new Scanner(System.in);
 		Perfil p = new Perfil();
 		
@@ -17,14 +22,18 @@ public class Procurar {
 		
 		case"s":
 			System.out.println("Procurando vagas!...");
+			//vagas de exemplo
+			double na = Math.random()*151.9;
+			double nv = Math.floor(Math.random()*15);
+			System.out.printf("Há %.0f" +" vagas a ",nv);		
+			System.out.println(aaa.format(na)+" Metros");
 			break;
 		case"n":
 			System.out.println("Obrigado, voltando ao menu principal!");
 			break;
 		case"p":
 			p.Opcao();
-			default:
-				System.out.println("erro, tente novamente");
+			
 		}
 	}
 }
