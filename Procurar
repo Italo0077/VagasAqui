@@ -1,9 +1,7 @@
-package Entidades;
-
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-public class Procurar {
+public class Procurar{
 	
 	public String escolha;
 	
@@ -13,26 +11,33 @@ public class Procurar {
 		DecimalFormat aaa = new DecimalFormat("00.00");
 		Scanner ler = new Scanner(System.in);
 		Perfil p = new Perfil();
+		Cadastro c = new Cadastro();
+		
 		
 		System.out.println("Deseja procura vagas? s/n\n"
-				+ "ver perfil 'p' "); // imprima um menssagem
+				+ "ver perfil 'p'\n"
+				+ "Sair 'e'"); // imprima um menssagem
 		escolha = ler.next();
 		
 		switch(this.escolha) { // cria uma escolha "s" de sim e "n" de não
 		
 		case"s":
 			System.out.println("Procurando vagas!...");
-			//vagas de exemplo sãgerados automaticamete 
+			//vagas de exemplo
 			double na = Math.random()*151.9;
 			double nv = Math.floor(Math.random()*15);
 			System.out.printf("Há %.0f" +" vagas a ",nv);		
-			System.out.println(aaa.format(na)+" Metros");
+			System.out.println(" "+aaa.format(na)+" Metros");
+			c.Voltar();
 			break;
 		case"n":
-			System.out.println("Obrigado, voltando ao menu principal!");
+			System.out.println(" voltando ao menu principal!");
+			c.Voltar();
 			break;
 		case"p":
 			p.Opcao();
+		case"e":
+			
 			
 		}
 	}
