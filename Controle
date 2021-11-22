@@ -9,30 +9,38 @@
  * Lucas Sampaio
   */
  
-import javax.swing.JOptionPane;
 import Entidades.Cadastro;
-import Entidades.Procurar;
 import java.util.Scanner;
 
-public class Controle {
+public class Controle{
 
 	public static void main(String[] args) {
-		
+		//atributos
+		String a,b;
+		int i=0;
+		//instanciamento
 		Scanner ler = new Scanner(System.in);
-		Entidades.Cadastro ec = new Entidades.Cadastro();
+		Cadastro ec = new Cadastro();
+		
 							
 		System.out.println("===========================================");
 		System.out.println("              Vagas Aqui!                  ");
 		System.out.println("===========================================");
 				 
-		 ec.cadastro(); // as opções de cadastro foram movido para classe cadastro
+		 ec.cadastro();
+		 
 		
+		while (i<8){
+			
 		System.out.println("Digite o Login(email)");
-		String b = ler.next();
+		 b = ler.next();
 		System.out.println("Digite sua Senha: ");
-		String a = ler.next();
+		 a = ler.next();
+		 ec.logado();
+		}
 		
-		ec.logado(); // opção de logado tb esta na classe cadastro		
+		
+		ec.logado();
 		
 	}
 
