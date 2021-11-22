@@ -1,3 +1,4 @@
+
 /* Equipe Brothers
  * 
  * integrantes
@@ -16,23 +17,32 @@ public class Controle{
 
 	public static void main(String[] args) {
 		//atributos
-		String a,b;
+	 String a;
+		String b;
 		
 		//instanciamento
 		Scanner ler = new Scanner(System.in);
 		Cadastro ec = new Cadastro();
-								
+		
+							
 		System.out.println("===========================================");
 		System.out.println("              Vagas Aqui!                  ");
 		System.out.println("===========================================");
 				 
 		 ec.cadastro();
-		 		
+		 
+		
+			
 		System.out.println("Digite o Login(email)");
 		 b = ler.next();
 		System.out.println("Digite sua Senha: ");
 		 a = ler.next();
-		 ec.logado();
+		 
+		 if(ec.getEmail().equals(b) && ec.getSenha().equals(a)) { // 
+				System.out.println("Logado com suceso");
+				System.out.println("==========================");
+				ec.logado();
+		 }
 		
 	}
 
