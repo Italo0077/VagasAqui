@@ -1,87 +1,168 @@
 package VagasAqui.Entidades;
-
-import java.sql.Date;
 import java.util.Scanner;
+
+import javax.swing.table.DefaultTableCellRenderer;
 
 public class Assinatura extends Cadastro {
     Scanner ler= new Scanner(System.in);
     //variavel
     private boolean status;
     private double valor= 40.00;
-    private String nom,emai,c,datapagamento;
-    private int nCelu;
-    
+    private String nom,emai,datapagamento;
+    private int sen,nCelu,i;
+    public String c;
 
-    //metodos
-
-    public void Fazerassinatura(){
-    System.out.println("Digite  sim para fazer a assinatura"); 
-    switch(c){
-    case"sim":
-
-    do{
-    System.out.println("digite o seu nome");
-    setNom(ler.next());
-    if (nom==getNome()){}
-
-    while(nom!=getNome())
-
-    do{
-        System.out.println("digite o seu email");
-    setEmai(ler.next());
-        if (nom==getNome()){}
+    //geters e seters
+    public boolean isStatus() {
+        return status;
     }
     
-        while(nom!=getNome())
-
-
-    System.out.println("digite o seu numero ");
-    setnCelu(ler.nextInt());
-    System.out.println("digite a data de inicio do seu plano");
-
-    if(nom==getNome() & emai==getEmail() & nCelu=getnCelular()){
-    this.status= true;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
-    else
-    status = false;
+    
+    public double getValor() {
+        return valor;
     }
-        break;
+    
+    public void setValor(double valor) {
+        this.valor = valor;
     }
-
+    
+    public String getNom() {
+        return nom;
+    }
+    
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+    
+    public String getEmai() {
+        return emai;
+    }
+    
+    public void setEmai(String emai) {
+        this.emai = emai;
+    }
     
     public String getDatapagamento() {
         return datapagamento;
     }
+    
     public void setDatapagamento(String datapagamento) {
         this.datapagamento = datapagamento;
     }
-    public String getNom() {
-        return nom;
+    
+    public int getSen() {
+        return sen;
     }
-    public void setNom(String nom) {
-        this.nom = nom;
+    
+    public void setSen(int sen) {
+        this.sen = sen;
     }
-    public String getEmai() {
-        return emai;
-    }
-    public void setEmai(String emai) {
-        this.emai = emai;
-    }
+    
     public int getnCelu() {
         return nCelu;
     }
+    
     public void setnCelu(int nCelu) {
         this.nCelu = nCelu;
     }
-    public double getValor() {
-        return valor;
-    }
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
+    
+//METODOS
 
+// fazer assinatura
+public void Fazerassinatura(){
+    System.out.println("Digite sim para fazer a assinatura e nao para voltar ao menu"); 
+    c=ler.next();
+    switch(c){
+    case"sim":
+
+    do{
+        System.out.println("Digite o seu nome completo");
+        setNom(ler.next());
+        i=1;
+    if(nom.equals(super.getNome())){
+        i=2;
+    }
+    else{
+        i=1;
+    
+        }
+    }while(i==1);
+
+    do{
+    System.out.println("digite o seu email");
+    setEmai(ler.next());
+    i=1;
+    if(this.emai.equals(super.getEmail())){
+        i=2;
+    }
+    else{
+        i=1;
+    }
+    }while(i==1);
+
+
+do{
+    System.out.println("Digite o seu numero de telefone ");
+    setnCelu(ler.nextInt());
+    i=1;
+    if(this.nCelu==super.getnCelular()){
+       i=2;
+    }
+    else{
+        i=1;
+    }
+}while(i==2);
+    
+    System.out.println("Digite a data desejada para inicio do seu plano");
+    setDatapagamento(ler.next());
+
+    do {
+    System.out.println("Digite a senha cadastrada");
+    setSenha(ler.nextInt());
+    i=1;
+    if(this.sen==(super.getSenha())){
+        i=2;
+    }
+    else{
+    i=1;
+    }
+}while(i==2);
+break;
+case"nao":
+    System.out.println("Voltando ao menu");
+    break;
+}
+
+}
+
+    // Verificar assinatura /pode ser usado no agendar
+    public void verificar(){
+    System.out.println("Status da assinatura");
+    if(this.sen==super.getSenha()){
+    System.out.println("Sua assinatura foi aprovada com sucesso");
+    status=true;
+}
+    else
+    {
+    System.out.println("Sua assinatura não foi aprovada");
+    status=false;
+    }
+}
 
     public void Cancelarassinatura(){
-        this.status=false;
+        status=false;
+        System.out.println("Sua assinatura foi cancelada com sucesso");
     }
+
+/// dados
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+
+        return("Nome "+getNome()+"\nEmail "+getEmail()+ "\nnumero "+getnCelular()+"\nTotal "+valor+"\nData pagamento "+ datapagamento+ "\nStatus da assinatura "+ status);
+    }
+
 }
