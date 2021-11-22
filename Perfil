@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
-public class Perfil{
+public class Perfil {
 	//isntanciar
 	Scanner ler = new Scanner(System.in);
 	Cadastro c = new Cadastro();
+	Assinatura a = new Assinatura();
 	
 	//atributos
 	
@@ -21,15 +22,29 @@ public class Perfil{
 				c.EditarCadastro();// editação de cadastro na classe cadastro
 				break;
 			case 2:
-				
+				System.out.println("Deseja fazer assinatura 'a'\n"
+						+ "cancelar assinatura 'c'");
+				String ass = ler.next();
+				switch(ass) {
+				case "a":
+					a.Fazerassinatura();
+					break;
+				case "c":
+					a.Cancelarassinatura();
+				}
 				break;
 			case 3:
 				System.out.println("Voltando");
+				c.Voltar();
 				break;
 				default:
 					System.out.println("Você digitou caracteres incorretos");
+					c.Voltar();
 		}
 		
+		
+			
+	
 		
 	}
 
