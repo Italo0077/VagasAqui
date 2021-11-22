@@ -10,11 +10,11 @@ public class Agendar2 extends Assinatura{
 	switch(this.escolha){
         
         case"s":System.out.println("Verificando sua assinatura. . .");
-        if Assinatura=true{
+        if status=true{
             System.out.println("Vaga agendada com sucesso!");
             
         }
-        else Assinatura= false{
+        else {
             System.out.println("Você não é um assinante");
             
         }
