@@ -1,13 +1,22 @@
-package Entidades;
+import java.util.Scanner;
+
+
 public class Cadastro {
 	//Atributos
-	private String email,senha,login,nome;
+	/*private String email,senha,login,nome;
 	private int nCelular,data;
 	public String entrar,saida,escolha;
-	
+	*/
+	protected String email,nome;
+	private String senha,login;
+	private int data;
+	protected  int nCelular;
+
+	public String entrar,saida,escolha;
 	//Processamento
 	Scanner ler = new Scanner(System.in);
 	Procurar p = new Procurar();
+	
 
 	public void cadastro() {
 		
@@ -39,9 +48,10 @@ public class Cadastro {
 	public void Senha(String Senha) {
 		this.senha = Senha;
 	}
+	//ao logar
 	public void logado() {
 		
-		if(getEmail().equals(this.email) && getSenha().equals(this.senha)) { // 
+		if(getEmail().equals(email) && getSenha().equals(senha)) { // 
 			System.out.println("Logado com suceso");
 			p.procurar();
 		}else
@@ -49,7 +59,10 @@ public class Cadastro {
 		
 		
 	}
-	//Metodo que editará cadastro
+		
+		
+	
+	
 	public void EditarCadastro() {
 		System.out.println("Deseja criar um novo nome de usuário? s/n");
 		String s = ler.next(); //atributo
@@ -92,8 +105,14 @@ public class Cadastro {
 			break;
 			default:
 				System.out.println("Ação cancelada");
+				p.procurar();
+				
 		}
 		
+	}
+	public void Voltar() {
+		System.out.println("====================================");
+		p.procurar();
 	}
 	
 	//Get e  Set
