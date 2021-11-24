@@ -1,87 +1,229 @@
-package VagasAqui.Entidades;
 
-import java.sql.Date;
 import java.util.Scanner;
+
 
 public class Assinatura extends Cadastro {
     Scanner ler= new Scanner(System.in);
     //variavel
     private boolean status;
     private double valor= 40.00;
-    private String nom,emai,c,datapagamento;
-    private int nCelu;
-    
+    private String nom,emai,datapagamento,contato,sen;
+    private int i;
+    public String c;
+   
+//METODOS
 
-    //metodos
+// fazer assinatura
+public void Fazerassinatura(){
+	while (getEmail() == getSenha()) { 
+		String escolha;
+		System.out.println("Digite seu nome");
+		String nome = ler.next();
+		
+		if(getNome().equals(nome)) {
+			while (getEmail() == getSenha()) {
+			System.out.println("Digite seu email");
+				String email = ler.next();
+				
+				if(getEmail().equals(email)) {
+					while (getEmail() == getSenha()) {
+					System.out.println("Digite seu contato");
+					String contato = ler.next();
+					
+					if(getnCelular().equals(contato)) {
+						while (getEmail() == getSenha()) {
+						System.out.println("digite sua senha");
+						String senha = ler.next();
+						
+						if(getSenha().equals(senha)) {
+							System.out.println("Seu cadastro foi feito com sucesso");
+							
+							setStatus(true);
+							System.out.println();
+							Voltar();
+							break;
+						}
+					}
+					System.out.println("você errou");
+					
+			}
+					System.out.println("você errou, deseja continuar? s/n");
+					escolha = ler.next();
+					switch(escolha) {
+					case"s":
+						break;
+					case"n":
+						System.out.println("voltando ao menu");
+						Voltar();
+						break;
+					}
 
-    public void Fazerassinatura(){
-    System.out.println("Digite  sim para fazer a assinatura"); 
-    switch(c){
-    case"sim":
+		}
+					System.out.println("você errou, deseja continuar? s/n");
+					escolha = ler.next();
+					switch(escolha) {
+					case"s":
+						break;
+					case"n":
+						System.out.println("voltando ao menu");
+						Voltar();
+						break;
+					}
 
-    do{
-    System.out.println("digite o seu nome");
-    setNom(ler.next());
-    if (nom==getNome()){}
+	}
+				System.out.println("você errou, deseja continuar? s/n");
+				escolha = ler.next();
+				switch(escolha) {
+				case"s":
+					break;
+				case"n":
+					System.out.println("voltando ao menu");
+					Voltar();
+					break;
+				}
+}
+			System.out.println("você errou, deseja continuar? s/n");
+			escolha = ler.next();
+			switch(escolha) {
+			case"s":
+				break;
+			case"n":
+				System.out.println("voltando ao menu");
+				Voltar();
+				break;
+			}
+}
+		System.out.println("você errou, deseja continuar? s/n");
+		escolha = ler.next();
+		switch(escolha) {
+		case"s":
+			break;
+		case"n":
+			System.out.println("voltando ao menu");
+			Voltar();
+			break;
+		}
+		
+	}
+}
 
-    while(nom!=getNome())
+   
 
-    do{
-        System.out.println("digite o seu email");
-    setEmai(ler.next());
-        if (nom==getNome()){}
-    }
-    
-        while(nom!=getNome())
+    public boolean isStatus() {
+    return status;
+}
 
 
-    System.out.println("digite o seu numero ");
-    setnCelu(ler.nextInt());
-    System.out.println("digite a data de inicio do seu plano");
 
-    if(nom==getNome() & emai==getEmail() & nCelu=getnCelular()){
-    this.status= true;
-    }
+public void setStatus(boolean status) {
+    this.status = status;
+}
+
+
+
+public double getValor() {
+    return valor;
+}
+
+
+
+public void setValor(double valor) {
+    this.valor = valor;
+}
+
+
+
+public String getNom() {
+    return nom;
+}
+
+
+
+public void setNom(String nom) {
+    this.nom = nom;
+}
+
+
+
+public String getEmai() {
+    return emai;
+}
+
+
+
+public void setEmai(String emai) {
+    this.emai = emai;
+}
+
+
+
+public String getDatapagamento() {
+    return datapagamento;
+}
+
+
+
+public void setDatapagamento(String datapagamento) {
+    this.datapagamento = datapagamento;
+}
+
+
+
+public String getContato() {
+    return contato;
+}
+
+
+
+public void setContato(String contato) {
+    this.contato = contato;
+}
+
+
+
+public String getSen() {
+    return sen;
+}
+
+
+
+public void setSen(String sen) {
+    this.sen = sen;
+}
+
+
+
+    // Verificar assinatura /pode ser usado no agendar
+    public void verificar(){
+    System.out.println("Status da assinatura");
+    if(this.sen.equals(getSenha())){
+    System.out.println("Sua assinatura foi aprovada com sucesso");
+    status=true;
+}
     else
-    status = false;
+    {
+    System.out.println("Sua assinatura não foi aprovada");
+    status=false;
+    Fazerassinatura();
     }
-        break;
-    }
-
-    
-    public String getDatapagamento() {
-        return datapagamento;
-    }
-    public void setDatapagamento(String datapagamento) {
-        this.datapagamento = datapagamento;
-    }
-    public String getNom() {
-        return nom;
-    }
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-    public String getEmai() {
-        return emai;
-    }
-    public void setEmai(String emai) {
-        this.emai = emai;
-    }
-    public int getnCelu() {
-        return nCelu;
-    }
-    public void setnCelu(int nCelu) {
-        this.nCelu = nCelu;
-    }
-    public double getValor() {
-        return valor;
-    }
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
+}
 
     public void Cancelarassinatura(){
-        this.status=false;
+        status=false;
+        System.out.println("Sua assinatura foi cancelada com sucesso");
     }
+
+/// dados
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+
+        return("Nome "+getNom()
+        +"\nEmail "+getEmai()
+        + "\nnumero "+getContato()
+        +"\nTotal "+valor
+        +"\nData pagamento "+ datapagamento
+        + "\nStatus da assinatura "+ status);
+    }
+
 }
