@@ -1,7 +1,9 @@
+
 import java.util.Scanner;
+import java.text.DateFormat;
+import java.util.Date;
 
-
-public class Cadastro {
+public class Cadastro extends Procurar{
 	//Atributos
 	/*private String email,senha,login,nome;
 	private int nCelular,data;
@@ -10,12 +12,11 @@ public class Cadastro {
 	protected String email,nome;
 	private String senha,login;
 	private int data;
-	protected  int nCelular;
-
+	protected  String nCelular;
+	
 	public String entrar,saida,escolha;
 	//Processamento
 	Scanner ler = new Scanner(System.in);
-	Procurar p = new Procurar();
 	
 
 	public void cadastro() {
@@ -31,7 +32,7 @@ public class Cadastro {
 			System.out.println("Informe sua data de nascimento");
 			setData(ler.nextInt());
 			System.out.println("Digite o numero de celular");
-			setnCelular(ler.nextInt());
+			setnCelular(ler.next());
 			System.out.println("Digite o seu melhor Email");
 			setEmail(ler.next());
 			System.out.println("Qual vai ser a sua Senha para Vagas Aqui!");			
@@ -53,7 +54,7 @@ public class Cadastro {
 		
 		if(getEmail().equals(email) && getSenha().equals(senha)) { // 
 			System.out.println("Logado com suceso");
-			p.procurar();
+			procurar();
 		}else
 		System.out.println("Tente de novo");
 		
@@ -90,7 +91,7 @@ public class Cadastro {
 		switch(s) {
 		case"s":
 			System.out.println("Novo numero de celular");
-			this.setnCelular(ler.nextInt());
+			this.setnCelular(ler.next());
 			break;
 			default:
 				System.out.println("Ação cancelada");
@@ -102,17 +103,19 @@ public class Cadastro {
 		case "s":
 			System.out.println("Novo email");
 			this.setEmail(ler.next());
+			System.out.println(toString());
+			procurar();
 			break;
 			default:
 				System.out.println("Ação cancelada");
-				p.procurar();
+				procurar();
 				
 		}
 		
 	}
 	public void Voltar() {
 		System.out.println("====================================");
-		p.procurar();
+		procurar();
 	}
 	
 	//Get e  Set
@@ -150,11 +153,11 @@ public class Cadastro {
 		this.nome = nome;
 	}
 
-	public int getnCelular() {
+	public String getnCelular() {
 		return nCelular;
 	}
 
-	public void setnCelular(int nCelular) {
+	public void setnCelular(String nCelular) {
 		this.nCelular = nCelular;
 	}
 
@@ -167,8 +170,15 @@ public class Cadastro {
 	}
 
 	//to string
+	@Override
 	public String toString() {
-		return "Seu nome é"+this.nome+"\nSeu Email: "+this.email;
+		Date fd = new Date();
+		DateFormat dfs = DateFormat.getDateInstance(DateFormat.SHORT);
+		
+		return  "Seu nome é: "+this.getNome()+
+				"\nSeu Email: "+this.email+
+				"\nSeu contato: "+this.getnCelular()+
+				"\nData de nascimento: "+String.format(dfs.format(getData())+"\n\n");
 	}
 
 }
