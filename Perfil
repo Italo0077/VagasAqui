@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Perfil {
+public class Perfil extends Cadastro{
 	//isntanciar
 	Scanner ler = new Scanner(System.in);
 	Cadastro c = new Cadastro();
@@ -12,14 +12,14 @@ public class Perfil {
 	//processamento
 	public void Opcao() {
 		int escolhaPerfil = 0;
-		System.out.println("O que deseja fazer?\n"
+		System.out.println(c+"O que deseja fazer?\n"
 				+ "1.Editar perfil\n"
 				+ "2.Editar assinatura\n"
 				+ "3.voltar\n");
 		 escolhaPerfil = ler.nextInt();
 		switch(escolhaPerfil){
 			case 1:
-				c.EditarCadastro();// editação de cadastro na classe cadastro
+				EditarCadastro();// editação de cadastro na classe cadastro
 				break;
 			case 2:
 				System.out.println("Deseja fazer assinatura 'a'\n"
@@ -35,11 +35,11 @@ public class Perfil {
 				break;
 			case 3:
 				System.out.println("Voltando");
-				c.Voltar();
+				Voltar();
 				break;
 				default:
 					System.out.println("Você digitou caracteres incorretos");
-					c.Voltar();
+					Voltar();
 		}
 		
 		
