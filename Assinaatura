@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Assinatura extends Cadastro {
     Scanner ler= new Scanner(System.in);
     //variavel
-    private boolean status;
+    protected boolean status;
     private double valor= 40.00;
     private String nom,emai,datapagamento,contato,sen;
     private int i;
