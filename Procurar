@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-public class Procurar{
+public class Procurar extends Cadastro{
 	
 	public String escolha;
 	
@@ -14,7 +14,7 @@ public class Procurar{
 		Cadastro c = new Cadastro();
 		
 		
-		System.out.println("Deseja procura vagas? s/n\n"
+		System.out.println(c+"Deseja procura vagas? s/n\n"
 				+ "ver perfil 'p'\n"
 				+ "Sair 'e'"); // imprima um menssagem
 		escolha = ler.next();
@@ -28,11 +28,11 @@ public class Procurar{
 			double nv = Math.floor(Math.random()*15);
 			System.out.printf("Há %.0f" +" vagas a ",nv);		
 			System.out.println(" "+aaa.format(na)+" Metros");
-			c.Voltar();
+			Voltar();
 			break;
 		case"n":
 			System.out.println(" voltando ao menu principal!");
-			c.Voltar();
+			Voltar();
 			break;
 		case"p":
 			p.Opcao();
