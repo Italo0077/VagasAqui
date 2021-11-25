@@ -1,0 +1,115 @@
+package Entidades;
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+import javax.print.DocFlavor.STRING;
+
+public class Estacionamento extends Assinatura {
+    private String Nome,discnom,pertence;
+    public boolean permlocacao;
+    private String Local;
+    int distancia=20;
+
+    protected boolean permvaga;
+    protected int Vaga,discvag,i=1,dist;
+    protected boolean StatusVaga;
+
+    Scanner ler = new Scanner(System.in);
+
+    Estacionamento(String Nome,boolean permlocacao,String Local){
+        this.Nome=nome;
+        this.permlocacao=permlocacao;
+        this.Local=Local;
+    }
+
+    public void CadastrarVaga(int Numero,boolean StatusVaga,boolean permvaga) {
+        this.Vaga=Numero;
+        this.StatusVaga=StatusVaga;
+        this.permvaga=permvaga;
+        pertence=nome;
+    }
+    public void procurar() {
+		DecimalFormat aaa = new DecimalFormat("00.00");
+		Perfil p = new Perfil();
+		Cadastro c = new Cadastro();
+		
+		
+		System.out.println("Deseja procura vagas? s/n\n"
+				+ "ver perfil 'p'\n"
+				+ "Sair 'e'"); // imprima um menssagem
+		escolha = ler.next();
+		
+		switch(this.escolha) { // cria uma escolha "s" de sim e "n" de não
+		
+		case"s":
+            do{
+
+                System.out.println("qual distancia em relaçao a você\n"+distancia);
+                dist=ler.nextInt();
+                if(dist==distancia){
+                System.out.println("Procurando Estacionamentos\n"+ Nome);
+                System.out.println("Digite o nome do estacionamento!...");
+                discnom=ler.next();
+                System.out.println("Procurando vagas!...\n"+Vaga);
+                System.out.println("Digite a vaga que deseja...");
+                discvag=ler.nextInt();
+                }
+                else{
+                    i=2;
+                }
+            }while(i==2);
+
+             do{
+                 if(discnom==Nome&&discvag==Vaga){
+                 System.out.println("dirija-se a este local "+Nome+"\n"+Local+"\no numero da vaga"+Vaga);
+                 StatusVaga=true;
+                }
+            }while(i==2);
+                 
+			c.Voltar();
+			break;
+		case"n":
+			System.out.println(" voltando ao menu principal!");
+			c.Voltar();
+			break;
+		case"p":
+			p.Opcao();
+		case"e":
+	
+		}
+    }
+    public void agendar(){
+        System.out.println("Deseja agendar uma vaga? sim/nao ");
+        switch(this.escolha){
+            case"sim":System.out.println("Verificando sua assinatura. . .");
+            if (status==true){
+                procurar();
+                switch(this.escolha){
+                    case"1":
+
+                }
+                StatusVaga=false;
+                System.out.println("Vaga agendada com sucesso!");   
+            }
+            else {
+                System.out.println("Você não é um assinante");
+                
+            }
+            case"nao":System.out.println("Voltando. . .");
+            break;
+            
+            }
+        }
+
+    public boolean getPermlocacao() {
+        return permlocacao;
+    }
+
+    public void setPermlocacao(boolean permlocacao) {
+        this.permlocacao = permlocacao;
+    }
+
+
+
+
+}
