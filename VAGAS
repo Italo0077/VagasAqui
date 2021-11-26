@@ -1,0 +1,81 @@
+package Entidades;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+public class Vagas extends Assinatura{
+
+    protected int Vaga;
+    protected String pertence;
+    protected boolean permvaga;
+    protected String Local;
+    protected int Nvagas;
+    protected String NomeEsta;
+    protected int discvag,i=1;
+    public String escolha,discnom,dist;
+    public boolean StatusVaga;
+    
+    public boolean getStatusVaga() {
+        return StatusVaga;
+    }
+    public void setStatusVaga(boolean statusVaga) {
+        this.StatusVaga = statusVaga;
+    
+    }
+    
+    Scanner ler = new Scanner(System.in);
+    
+    
+   
+    public int getVaga() {
+        return Vaga;
+    }
+    public void setVaga(int vaga) {
+        Vaga = vaga;
+    }
+    public String getPertence() {
+        return pertence;
+    }
+    public void setPertence(String pertence) {
+        this.pertence = pertence;
+    }
+    
+    
+    public boolean getPermvaga() {
+        return permvaga;
+    }
+    public void setPermvaga(boolean permvaga) {
+        this.permvaga = permvaga;
+    }
+    public String getLocal() {
+        return Local;
+    }
+    public void setLocal(String local) {
+        Local = local;
+    }
+    public int getNvagas() {
+        return Nvagas;
+    }
+    public void setNvagas(int nvagas) {
+        Nvagas = nvagas;
+    }
+    public String getNomeEsta() {
+        return NomeEsta;
+    }
+    public void setNomeEsta(String nomeEsta) {
+        NomeEsta = nomeEsta;
+    }
+
+    
+    public void DadosVaga(){
+        Nvagas=Vaga;
+        System.out.println("Dados da vaga\n"
+                    + "\nNumero "+Vaga
+                    + "\npertence a "+pertence
+                    +"\npode ser alocada? "+permvaga
+                    +"\nLocal "+Local);
+    
+    }
+
+ 
+    
+}
