@@ -1,229 +1,125 @@
+package Entidades;
 
 import java.util.Scanner;
 
-
-public class Assinatura extends Cadastro {
-    Scanner ler= new Scanner(System.in);
-    //variavel
-    protected boolean status;
-    private double valor= 40.00;
-    private String nom,emai,datapagamento,contato,sen;
-    private int i;
+public class Assinatura extends Cadastro{
+	public int i;
     public String c;
+    public boolean status=true,pagamento=true;
+    private double valor= 40.00;
+    
+
+    Scanner ler= new Scanner(System.in);
+   // Cadastro a= new Cadastro();
+    
+    //variavel
    
-//METODOS
-
-// fazer assinatura
-public void Fazerassinatura(){
-	while (getEmail() == getSenha()) { 
-		String escolha;
-		System.out.println("Digite seu nome");
-		String nome = ler.next();
-		
-		if(getNome().equals(nome)) {
-			while (getEmail() == getSenha()) {
-			System.out.println("Digite seu email");
-				String email = ler.next();
-				
-				if(getEmail().equals(email)) {
-					while (getEmail() == getSenha()) {
-					System.out.println("Digite seu contato");
-					String contato = ler.next();
-					
-					if(getnCelular().equals(contato)) {
-						while (getEmail() == getSenha()) {
-						System.out.println("digite sua senha");
-						String senha = ler.next();
-						
-						if(getSenha().equals(senha)) {
-							System.out.println("Seu cadastro foi feito com sucesso");
-							
-							setStatus(true);
-							System.out.println();
-							Voltar();
-							break;
-						}
-					}
-					System.out.println("você errou");
-					
-			}
-					System.out.println("você errou, deseja continuar? s/n");
-					escolha = ler.next();
-					switch(escolha) {
-					case"s":
-						break;
-					case"n":
-						System.out.println("voltando ao menu");
-						Voltar();
-						break;
-					}
-
-		}
-					System.out.println("você errou, deseja continuar? s/n");
-					escolha = ler.next();
-					switch(escolha) {
-					case"s":
-						break;
-					case"n":
-						System.out.println("voltando ao menu");
-						Voltar();
-						break;
-					}
-
+    public boolean isStatus() {
+		return status;
 	}
-				System.out.println("você errou, deseja continuar? s/n");
-				escolha = ler.next();
-				switch(escolha) {
-				case"s":
-					break;
-				case"n":
-					System.out.println("voltando ao menu");
-					Voltar();
-					break;
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	public boolean isPagamento() {
+		return pagamento;
+	}
+
+	public void setPagamento(boolean pagamento) {
+		this.pagamento = pagamento;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+	public void Fazerassinatura(){
+		do{
+			System.out.println("Digite seu email");
+			c= ler.next();
+			if(getEmail().equals(c)){
+				do{
+					System.out.println("Digite a senha");
+				c= ler.next();
+				if(getSenha().equals(c)){
+		
+					System.out.println("Assinatura feita com sucessso aproveite os beneficios Premim");
+					System.out.println("VocÃª recebera o boleto via email");
+					verificar();
+					i=1;
 				}
-}
-			System.out.println("você errou, deseja continuar? s/n");
-			escolha = ler.next();
-			switch(escolha) {
-			case"s":
-				break;
-			case"n":
-				System.out.println("voltando ao menu");
-				Voltar();
-				break;
+					else{
+					System.out.println("Senha incorreta deseja tentar novamente s/n");
+					c=ler.next();
+					switch(c){
+						case "s":
+							i=2;
+						c="W";
+						break;
+						case "n":
+						i=1;
+						//Voltar();
+					}
+					}
+				}while(i==2);
 			}
-}
-		System.out.println("você errou, deseja continuar? s/n");
-		escolha = ler.next();
-		switch(escolha) {
-		case"s":
+				else{
+					System.out.println("Emeil incorreto deseja tentar novamente s/n");
+					c=ler.next();
+					switch(c){
+						case "s":
+							i=2;
+						break;
+						case "n":
+							i=1;
+						Voltar();
+						break;
+				}
+			}}while(i==2);
+	}
+
+	// Verificar assinatura /pode ser usado no agendar
+    public void verificar(){
+		System.out.println("Status da assinatura");
+		if(pagamento==true){
+		System.out.println("Assinatura Concluida");
+status=true;
+	}
+		else
+		{
+		System.out.println("O pagamento nao foi realizado sua assinatura nao esta valida");
+		pagamento=false;
+		status=false;
+		Voltar();
+		}
+	}
+	//cancelar
+	public void Cancelarassinatura(){
+		System.out.println(" DEseja cancelar sim/n");
+		c=ler.next();
+		switch(c){
+			case "s":
+				status=false;
+		        System.out.println("Sua assinatura foi cancelada com sucesso");
 			break;
-		case"n":
-			System.out.println("voltando ao menu");
+			case "n":
 			Voltar();
 			break;
-		}
-		
 	}
-}
-
-   
-
-    public boolean isStatus() {
-    return status;
-}
-
-
-
-public void setStatus(boolean status) {
-    this.status = status;
-}
-
-
-
-public double getValor() {
-    return valor;
-}
-
-
-
-public void setValor(double valor) {
-    this.valor = valor;
-}
-
-
-
-public String getNom() {
-    return nom;
-}
-
-
-
-public void setNom(String nom) {
-    this.nom = nom;
-}
-
-
-
-public String getEmai() {
-    return emai;
-}
-
-
-
-public void setEmai(String emai) {
-    this.emai = emai;
-}
-
-
-
-public String getDatapagamento() {
-    return datapagamento;
-}
-
-
-
-public void setDatapagamento(String datapagamento) {
-    this.datapagamento = datapagamento;
-}
-
-
-
-public String getContato() {
-    return contato;
-}
-
-
-
-public void setContato(String contato) {
-    this.contato = contato;
-}
-
-
-
-public String getSen() {
-    return sen;
-}
-
-
-
-public void setSen(String sen) {
-    this.sen = sen;
-}
-
-
-
-    // Verificar assinatura /pode ser usado no agendar
-    public void verificar(){
-    System.out.println("Status da assinatura");
-    if(this.sen.equals(getSenha())){
-    System.out.println("Sua assinatura foi aprovada com sucesso");
-    status=true;
-}
-    else
-    {
-    System.out.println("Sua assinatura não foi aprovada");
-    status=false;
-    Fazerassinatura();
+        
     }
-}
-
-    public void Cancelarassinatura(){
-        status=false;
-        System.out.println("Sua assinatura foi cancelada com sucesso");
-    }
-
-/// dados
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-
-        return("Nome "+getNom()
-        +"\nEmail "+getEmai()
-        + "\nnumero "+getContato()
-        +"\nTotal "+valor
-        +"\nData pagamento "+ datapagamento
-        + "\nStatus da assinatura "+ status);
-    }
-
+	//dados
+	public void dadosAssinatura(){
+		System.out.println("Dados da assinatura\n"
+		+"NOME "+getNome()
+		+"\nemail "+getEmail()
+		+"\nstatus "+status);
+	}
+	
+	
 }
