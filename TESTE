@@ -1,0 +1,28 @@
+package Entidades;
+
+public class teste {
+    public static void main(String[] args){
+    	Propietario P = new Propietario();
+    	
+     // Cadastro p=new Cadastro();
+        P.cadastro();
+        P.logado();
+        P.Voltar();
+        
+    	//Assinatura x= new Assinatura();
+    	P.Fazerassinatura();
+    	P.Cancelarassinatura();
+    	P.dadosAssinatura();
+    //Estacionamento a= new Estacionamento();
+    	P.procurar();
+    	P.agendar();
+    	P.DadosESTA();
+    	P.DadosVaga();
+   //PROPIRTARIO
+     P.Cadastrarestacionamento();
+     P.Cadastrarvagas();
+     P.Cadastroprop();
+  
+    }
+}
+    
