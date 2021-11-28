@@ -4,15 +4,16 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 public class Vagas extends Assinatura{
 
-    protected int Vaga;
-    protected String pertence;
-    protected boolean permvaga;
+	protected int Vaga=1;
+    protected boolean permvaga=true;
     protected String Local;
     protected int Nvagas;
-    protected String NomeEsta;
+    protected String NomeEsta="S";
+    public boolean StatusVaga=false,Alocada=false;
+    
     protected int discvag,i=1;
     public String escolha,discnom,dist;
-    public boolean StatusVaga;
+    
     
     public boolean getStatusVaga() {
         return StatusVaga;
@@ -31,12 +32,6 @@ public class Vagas extends Assinatura{
     }
     public void setVaga(int vaga) {
         Vaga = vaga;
-    }
-    public String getPertence() {
-        return pertence;
-    }
-    public void setPertence(String pertence) {
-        this.pertence = pertence;
     }
     
     
@@ -70,7 +65,7 @@ public class Vagas extends Assinatura{
         Nvagas=Vaga;
         System.out.println("Dados da vaga\n"
                     + "\nNumero "+Vaga
-                    + "\npertence a "+pertence
+                    + "\npertence a "+NomeEsta
                     +"\npode ser alocada? "+permvaga
                     +"\nLocal "+Local);
     
