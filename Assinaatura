@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Assinatura extends Cadastro{
 	public int i;
     public String c;
-    public boolean status=true,pagamento=true;
+    public boolean StatusAS=true,pagamento=true;
     private double valor= 40.00;
     
 
@@ -15,11 +15,11 @@ public class Assinatura extends Cadastro{
     //variavel
    
     public boolean isStatus() {
-		return status;
+		return StatusAS;
 	}
 
 	public void setStatus(boolean status) {
-		this.status = status;
+		this.StatusAS = status;
 	}
 
 	public boolean isPagamento() {
@@ -88,13 +88,13 @@ public class Assinatura extends Cadastro{
 		System.out.println("Status da assinatura");
 		if(pagamento==true){
 		System.out.println("Assinatura Concluida");
-status=true;
+StatusAS=true;
 	}
 		else
 		{
 		System.out.println("O pagamento nao foi realizado sua assinatura nao esta valida");
 		pagamento=false;
-		status=false;
+		StatusAS=false;
 		Voltar();
 		}
 	}
@@ -104,7 +104,7 @@ status=true;
 		c=ler.next();
 		switch(c){
 			case "s":
-				status=false;
+				StatusAS=false;
 		        System.out.println("Sua assinatura foi cancelada com sucesso");
 			break;
 			case "n":
@@ -118,7 +118,7 @@ status=true;
 		System.out.println("Dados da assinatura\n"
 		+"NOME "+getNome()
 		+"\nemail "+getEmail()
-		+"\nstatus "+status);
+		+"\nstatus "+StatusAS);
 	}
 	
 	
