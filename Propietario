@@ -1,0 +1,94 @@
+package Entidades;
+
+public class Propietario extends Estacionamento {
+    String Nomeprop;
+    int Senhaprop=33;
+    String cpfprop="55";
+    Propietario(){
+    }
+
+    //PRECISA CRIAR LOGIN
+    //CRIAR MODIFICAR NOME E SENHA DO PROP
+    
+    
+    public void Cadastroprop(){
+        System.out.println(" Digite o seu Nome");
+        Nomeprop=ler.next();
+        System.out.println(" Digite o seu CPF");
+        cpfprop=ler.next();
+        System.out.println(" Digite uma senha");
+        Senhaprop=ler.nextInt();
+
+    }
+
+    public void Cadastrarvagas(){
+        do{
+        System.out.println(" Digite o seu CPF");
+        escolha=ler.next();
+        if(escolha.equals(cpfprop)){
+        System.out.println(" Digite a senha");
+        i=ler.nextInt();
+        if(Senhaprop==i){
+            i=1;
+        System.out.println(" Digite o numero da vaga");
+        Vaga=ler.nextInt();
+        setStatusVaga(true);
+        System.out.println(" Digite se pode ser alocada sim ou nao");
+        c=ler.next();
+     
+		if(c.equals("sim")){
+        	permvaga=true;
+        }
+        else {
+        	setPermvaga(permvaga=false);
+        }
+        System.out.println(" Digite o nome do estacionamento");
+        NomeEsta=ler.next();
+        System.out.println("Cadastro de vagaconcluido");
+               
+        }else{
+            i=2;
+        }
+    
+        }else{
+            System.out.println(" O peraÃ§ao nao realizada tente novamente");
+            i=2;
+        }}while(i==2);
+    }
+
+    public void Cadastrarestacionamento(){
+        do{
+        System.out.println(" Digite o seu CPF");
+        escolha=ler.next();
+        if(escolha.equals(cpfprop)){
+        System.out.println(" Digite a senha");
+        i=ler.nextInt();
+        if(Senhaprop==i){
+            i=1;
+        System.out.println(" Digite o nome do estacionamento");
+        NomeEsta=ler.next();
+        System.out.println(" Digite se vai alocar vagas sim/nao");
+        c=ler.next();
+        if(c.equals("sim")){
+        	permlocacao = true;
+        }
+        else {
+        	setPermlocacao(false);	
+        }
+        System.out.println(" Digite o nomero de vagas vagas");
+        Nvagas=(ler.nextInt());
+        System.out.println(" Digite o local do estacionamento");
+        Local=ler.next();
+               
+        }else{
+            i=2;
+            System.out.println(" O peraÃ§ao nao realizada tente novamente");
+            
+        }
+    
+        }
+        }while(i==2);
+        System.out.println("Estacionamento Cadastrado com Sucesso");
+        DadosESTA();
+    }
+    }
