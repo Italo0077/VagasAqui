@@ -1,10 +1,11 @@
+package Entidades;
+
 import java.util.Scanner;
 
-public class Perfil extends Cadastro{
+public class Perfil{
 	//isntanciar
 	Scanner ler = new Scanner(System.in);
-	Cadastro c = new Cadastro();
-	Assinatura a = new Assinatura();
+Assinatura r= new Assinatura();
 	
 	//atributos
 	
@@ -12,14 +13,14 @@ public class Perfil extends Cadastro{
 	//processamento
 	public void Opcao() {
 		int escolhaPerfil = 0;
-		System.out.println(c+"O que deseja fazer?\n"
+		System.out.println("O que deseja fazer?\n"
 				+ "1.Editar perfil\n"
 				+ "2.Editar assinatura\n"
 				+ "3.voltar\n");
 		 escolhaPerfil = ler.nextInt();
 		switch(escolhaPerfil){
 			case 1:
-				EditarCadastro();// editação de cadastro na classe cadastro
+				//r.EditarCadastro();// editaÃ§Ã£o de cadastro na classe cadastro
 				break;
 			case 2:
 				System.out.println("Deseja fazer assinatura 'a'\n"
@@ -27,24 +28,21 @@ public class Perfil extends Cadastro{
 				String ass = ler.next();
 				switch(ass) {
 				case "a":
-					a.Fazerassinatura();
+				//	r.Fazerassinatura();
 					break;
 				case "c":
-					a.Cancelarassinatura();
+					r.Cancelarassinatura();
 				}
 				break;
 			case 3:
 				System.out.println("Voltando");
-				Voltar();
+				r.Voltar();
 				break;
 				default:
-					System.out.println("Você digitou caracteres incorretos");
-					Voltar();
+					System.out.println("VocÃª digitou caracteres incorretos");
+					r.Voltar();
 		}
 		
-		
-			
-	
 		
 	}
 
