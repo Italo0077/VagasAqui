@@ -1,7 +1,5 @@
-package Entidades;
-
 public class Propietario extends Estacionamento {
-    String Nomeprop;
+	String Nomeprop;
     int Senhaprop=33;
     String cpfprop="55";
     Propietario(){
@@ -9,9 +7,20 @@ public class Propietario extends Estacionamento {
 
     //PRECISA CRIAR LOGIN
     //CRIAR MODIFICAR NOME E SENHA DO PROP
-    
-    
-    public void Cadastroprop(){
+
+	public String ModNomeprop() {
+		System.out.println(" Digite o seu novo Nome");
+        Nomeprop=ler.next();
+		return Nomeprop;
+	}
+
+	public int modSenhaprop() {
+		System.out.println(" Digite a nova senha");
+        Senhaprop=ler.nextInt();
+		return Senhaprop;
+	}
+
+	public void Cadastroprop(){
         System.out.println(" Digite o seu Nome");
         Nomeprop=ler.next();
         System.out.println(" Digite o seu CPF");
@@ -91,4 +100,33 @@ public class Propietario extends Estacionamento {
         System.out.println("Estacionamento Cadastrado com Sucesso");
         DadosESTA();
     }
+    
+    public void LoginProp() {
+    	do {
+    	System.out.println(" Digite o seu CPF");
+        escolha=ler.next();
+        if(escolha.equals(cpfprop)){
+        System.out.println(" Digite a senha");
+        i=ler.nextInt();
+        if(Senhaprop==i){
+            i=1;
+        System.out.println("Login aceito acessando conta");
+        }
+        else {
+        	System.out.println("Login nao aceito tente novamente");
+        		i=2;
+        }
+             
+        }else {System.out.println("CPF nao aceito tente novamente");
+        i=2;
+        }}while(i==2);
+    	
+    	
+    }
+    public void CadCod(){
+    	System.out.println("DIGITE O CODIGO DO SENSOR");
+    	CodSensor=ler.next();
+    	System.out.println("SENSOR CADASTRADO COM SUCESSO! \n CODIGO DO SENSOR: "+ CodSensor);
+    }
+    
     }
