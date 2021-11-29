@@ -1,0 +1,26 @@
+public class Sensor extends Vagas {
+	//VARIAVEL 
+	protected String CodSensor;//armazena o valor	do codigo do sensor do estacionamento
+	protected boolean Alerta=false;
+	//METODO
+
+	public void VerificarSaida() {
+	if(Saida==true){	
+		StatusVaga=true;
+		System.out.println("o veiculo saiu da vaga!");
+	}
+	else {
+		System.out.println("o veiculo não saiu da vaga!");
+	}
+
+		}
+	public void AlertaSaida() {
+		
+	if(Alerta==false && Saida==true && getStatusVaga()==true) {
+	System.out.println("Atenção Seu veiculo saiu do local");
+			}
+
+		}
+
+
+	}
