@@ -9,41 +9,52 @@
  * Guilherme Moreira
  * Lucas Sampaio
   */
- 
 import Entidades.Cadastro;
+import Entidades.Estacionamento;
+import Entidades.Perfil;
 import java.util.Scanner;
 
-public class Controle{
+public class Controle extends Estacionamento{
 
 	public static void main(String[] args) {
 		//atributos
-	 String a;
+		String a;
 		String b;
-		
+		String r = "n";
 		//instanciamento
 		Scanner ler = new Scanner(System.in);
 		Cadastro ec = new Cadastro();
+		Perfil es = new Perfil();
 		
-							
+		//processamento				
 		System.out.println("===========================================");
 		System.out.println("              Vagas Aqui!                  ");
 		System.out.println("===========================================");
 				 
-		 ec.cadastro();
+		ec.cadastro();
 		 
 		
-			
-		System.out.println("Digite o Login(email)");
-		 b = ler.next();
-		System.out.println("Digite sua Senha: ");
+		 while(r.equals("n")) {
+			 
+			 System.out.println("Digite o Login(email) / sair 'e' ");
+			 b = ler.next();
+		 if(b.equals("e")) {
+			 r="e";
+			 System.out.println("volte sempre");
+			 break;
+		 }
+		System.out.println("Digite sua Senha: / Sair 'e " );
 		 a = ler.next();
-		 
+		if(a.equals("e")) {
+			r ="e";
+		}
+			System.out.println(ec.getNome()+ec.getEmail());
 		 if(ec.getEmail().equals(b) && ec.getSenha().equals(a)) { // 
 				System.out.println("Logado com suceso");
 				System.out.println("==========================");
-				ec.logado();
+				es.Opcao();
+		 	}
+		 System.out.println("volte sempre");
 		 }
-		
 	}
-
 }
